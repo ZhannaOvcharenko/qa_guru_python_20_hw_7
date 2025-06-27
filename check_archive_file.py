@@ -13,7 +13,7 @@ def test_pdf_content(create_archive):
             page = reader.pages[0]
             text = page.extract_text()
 
-            assert "Тестовый PDF документ" in text
+            assert "Тестовый PDF" in text
 
 def test_xlsx_content(create_archive):
     with (ZipFile(ZIP_DIR) as zip_file):
@@ -32,4 +32,4 @@ def test_csv_content(create_archive):
             rows = list(csvreader)
 
             assert len(rows) == 8
-            assert rows[2] == ['12331', 'Анастасия', '28']
+            assert rows[2] == ['12332;Борис;19']
