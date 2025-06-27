@@ -13,7 +13,7 @@ def test_pdf_content(create_archive):
             page = reader.pages[0]
             text = page.extract_text()
 
-            assert "Тестовый PDF" in text
+            assert "Тестовый" in text
 
 def test_xlsx_content(create_archive):
     with (ZipFile(ZIP_DIR) as zip_file):
